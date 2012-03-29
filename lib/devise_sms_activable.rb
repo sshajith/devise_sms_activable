@@ -18,8 +18,8 @@ module Devise
   def self.sms_sender
     @@sms_sender_ref.get
   end
+
   
-  self.sms_sender = "Devise::SmsSender"
 end
 
 Devise.add_module :sms_activable, :model => "models/sms_activable", :controller => :sms_activations, :route => :sms_activation
