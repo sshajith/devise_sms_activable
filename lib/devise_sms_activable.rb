@@ -19,7 +19,11 @@ module Devise
     @@sms_sender_ref.get
   end
 
-  
+  def self.sms_sender=(class_name)
+    @@sms_sender_ref = ActiveSupport::Dependencies.ref(class_name)
+  end
+
+  self.sms_sender = "Devise::SmsSender"
 end
 
 Devise.add_module :sms_activable, :model => "models/sms_activable", :controller => :sms_activations, :route => :sms_activation
