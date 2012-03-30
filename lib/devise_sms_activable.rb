@@ -1,4 +1,5 @@
 require "devise"
+require 'active_support/dependencies'
 
 $: << File.expand_path("..", __FILE__)
 
@@ -20,7 +21,7 @@ module Devise
   end
 
   def self.sms_sender=(class_name)
-    @@sms_sender_ref = ActiveSupport::Dependencies.ref(class_name)
+    @@sms_sender_ref = ref(class_name)
   end
 
   self.sms_sender = "Devise::SmsSender"
