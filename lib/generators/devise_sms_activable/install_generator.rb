@@ -22,10 +22,8 @@ module DeviseSmsActivable
   # The period the generated sms token is valid, after
   # this period, the user won't be able to activate.
   # config.sms_confirm_within = 0.days
-
   # The keys searched for confirmation values.
   # config.sms_confirmation_keys = [:email]
-  
   # Your SmsSender class. The provided one uses 
   # moonshado-sms gem so install it and configure
   # if you want to use it.
@@ -45,7 +43,7 @@ CONTENT
       end
       
       def copy_default_smser
-        copy_file "lib/sms_sender.rb", "lib/devise_sms_sender.rb"
+        copy_file "lib/sms_sender.rb", "lib/devise/sms_sender.rb"
       end
     end
   end
